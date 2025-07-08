@@ -1,4 +1,3 @@
-
 export interface Session {
   id: string;
   title: string;
@@ -18,6 +17,8 @@ export interface Course {
   image: string;
   progress: number;
 }
+
+import { additionalSummaryData, additionalQuizData, additionalMindmapData } from './additionalCoursesData';
 
 export const coursesData: Course[] = [
   {
@@ -398,9 +399,10 @@ export const coursesData: Course[] = [
   }
 ];
 
-// Mock data for AI content generation
+// Mock data for AI content generation - Comprehensive data from GitHub repository
 export const mockAIData = {
   summary: {
+    // Database session
     'database-1': {
       title: 'Séance 1 : Concepts de base et SQL, Modèle relationnel, introduction à SQL',
       content: `# Concepts Fondamentaux des Bases de Données
@@ -424,7 +426,187 @@ export const mockAIData = {
 - **LDD** : CREATE, ALTER, DROP (Définition)
 - **LMD** : SELECT, INSERT, UPDATE, DELETE (Manipulation)
 - **LCD** : GRANT, REVOKE, COMMIT, ROLLBACK (Contrôle)`
-    }
+    },
+    // Python sessions
+    'python-1': {
+      title: 'Introduction à Python, installation, types, variables, boucles',
+      content: `# Introduction à Python
+
+## Installation et Environnement
+- **Anaconda** : Distribution Python complète avec packages scientifiques
+- **VS Code** : Éditeur de code recommandé avec extensions Python
+- **Jupyter Notebook** : Interface interactive pour prototypage et analyse
+
+## Types de Données Fondamentaux
+- **Entiers (int)** : Nombres entiers (ex: 42, -17)
+- **Flottants (float)** : Nombres décimaux (ex: 3.14, -2.5)
+- **Chaînes (str)** : Texte (ex: "Bonjour", 'Python')
+- **Booléens (bool)** : True ou False
+
+## Opérateurs
+- **Arithmétiques** : +, -, *, /, //, %, **
+- **Comparaison** : ==, !=, <, >, <=, >=
+- **Logiques** : and, or, not
+
+## Structures de Contrôle
+- **Conditions** : if, elif, else
+- **Boucles** : for (itération), while (tant que)`
+    },
+    // Java sessions
+    'java-1': {
+      title: 'Introduction au langage Java, syntaxe, variables, conditions, boucles, IDE',
+      content: `# Introduction au Langage Java
+
+## Caractéristiques de Java
+- **Orienté Objet** : Tout est objet (sauf types primitifs)
+- **Portable** : "Write once, run anywhere" (JVM)
+- **Robuste** : Gestion mémoire automatique, typage fort
+- **Sécurisé** : Contrôles d'accès, sandbox
+
+## Installation et IDE
+- **JDK** : Java Development Kit (compiler, JVM)
+- **Eclipse** : IDE populaire, gratuit, extensible
+- **IntelliJ IDEA** : IDE moderne, intelligent
+
+## Types de Données
+- **Primitifs** : int, double, boolean, char
+- **Objets** : String, Integer, ArrayList
+- **Déclaration** : type nomVariable = valeur;
+
+## Structures de Contrôle
+- **Conditions** : if, else if, else, switch
+- **Boucles** : for, while, do-while, for-each`
+    },
+    // Web Programming sessions
+    'web-1': {
+      title: 'Bases d\'HTML et CSS, Structure d\'une page web, Introduction à CSS',
+      content: `# HTML et CSS : Fondamentaux du Web
+
+## Structure HTML
+- **DOCTYPE** : Déclaration du type de document
+- **Balises sémantiques** : header, nav, main, article, section, footer
+- **Formulaires** : input, textarea, select, button
+- **Liens et images** : a href, img src
+
+## CSS : Mise en Forme
+- **Sélecteurs** : élément, .classe, #id, attribut
+- **Box Model** : margin, border, padding, content
+- **Positionnement** : static, relative, absolute, fixed
+- **Flexbox** : display: flex, justify-content, align-items
+
+## Responsive Design
+- **Media Queries** : @media screen and (max-width)
+- **Viewport** : meta viewport
+- **Unités relatives** : %, em, rem, vw, vh`
+    },
+    // Laravel sessions
+    'laravel-1': {
+      title: 'Introduction à Laravel, Installation, structure du projet',
+      content: `# Laravel : Framework PHP Moderne
+
+## Installation
+- **Composer** : Gestionnaire de dépendances PHP
+- **Laravel Installer** : outil en ligne de commande
+- **Serveur local** : php artisan serve
+
+## Structure du Projet
+- **app/** : Code application (Models, Controllers)
+- **routes/** : Définition des routes web et API
+- **resources/** : Vues, assets (CSS, JS)
+- **database/** : Migrations, seeders
+- **config/** : Fichiers de configuration
+
+## Architecture MVC
+- **Model** : Logique métier, accès aux données
+- **View** : Interface utilisateur (Blade templates)
+- **Controller** : Logique de contrôle, orchestration
+
+## Artisan CLI
+- **Commandes** : make:controller, make:model, migrate
+- **Serveur** : serve, tinker pour debug`
+    },
+    // Android sessions
+    'android-1': {
+      title: 'Introduction à Android Studio, Installation, création d\'un premier projet, architecture d\'une application',
+      content: `# Android Studio et Développement Mobile
+
+## Installation d'Android Studio
+- **SDK Android** : Outils de développement
+- **AVD Manager** : Émulateur Android
+- **Gradle** : Système de build automatisé
+
+## Architecture d'une Application Android
+- **Activities** : Écrans de l'application
+- **Fragments** : Composants UI réutilisables
+- **Services** : Tâches en arrière-plan
+- **Broadcast Receivers** : Écoute d'événements système
+
+## Structure du Projet
+- **src/main/java** : Code source Java/Kotlin
+- **src/main/res** : Ressources (layouts, strings, images)
+- **AndroidManifest.xml** : Configuration de l'app
+
+## Premier Projet
+- **MainActivity** : Activité principale
+- **activity_main.xml** : Layout principal
+- **strings.xml** : Textes de l'application`
+    },
+    // JavaScript sessions
+    'js-1': {
+      title: 'Bases de JavaScript moderne, Syntaxe ES6, manipulation du DOM',
+      content: `# JavaScript Moderne (ES6+)
+
+## Syntaxe ES6
+- **let/const** : Nouvelles déclarations de variables
+- **Arrow functions** : () => {}
+- **Template literals** : \`Bonjour \${nom}\`
+- **Destructuring** : const {a, b} = objet
+
+## Manipulation du DOM
+- **Sélection** : getElementById, querySelector
+- **Modification** : innerHTML, textContent
+- **Styles** : element.style.property
+- **Événements** : addEventListener
+
+## Fonctions Avancées
+- **Promises** : Gestion asynchrone
+- **async/await** : Syntaxe synchrone pour asynchrone
+- **Modules** : import/export
+
+## ES6+ Features
+- **Classes** : class NomClasse {}
+- **Spread operator** : ...array
+- **Default parameters** : function(a = 1)`
+    },
+    // Mobile JS sessions
+    'mobile-js-1': {
+      title: 'Introduction à React Native/Ionic, Installation, création d\'un premier projet',
+      content: `# Développement Mobile avec JavaScript
+
+## React Native
+- **Installation** : npm install -g react-native-cli
+- **Nouveau projet** : react-native init MonProjet
+- **Composants** : View, Text, TouchableOpacity
+- **Navigation** : React Navigation
+
+## Ionic
+- **Installation** : npm install -g @ionic/cli
+- **Nouveau projet** : ionic start monApp tabs
+- **Frameworks** : Angular, React, Vue
+- **Capacitor** : Accès aux APIs natives
+
+## Architecture Mobile
+- **Composants** : Réutilisables et modulaires
+- **État** : Gestion avec hooks ou Redux
+- **APIs natives** : Caméra, GPS, stockage
+
+## Développement
+- **Hot reload** : Mise à jour en temps réel
+- **Débogage** : Chrome DevTools, Flipper
+- **Tests** : Jest, Detox pour E2E`
+    },
+    // Merge additional summary data
+    ...additionalSummaryData
   },
   quiz: {
     'database-1': {
@@ -462,7 +644,61 @@ export const mockAIData = {
           explanation: 'L\'architecture ANSI-SPARC comprend 3 niveaux : conceptuel, logique et physique.'
         }
       ]
-    }
+    },
+    // Python quizzes
+    'python-1': {
+      title: 'Quiz : Introduction à Python',
+      questions: [
+        {
+          id: 1,
+          question: 'Quel est le type de données pour les nombres entiers en Python ?',
+          options: ['int', 'integer', 'number', 'num'],
+          correct: 0,
+          explanation: 'En Python, le type pour les nombres entiers est "int".'
+        },
+        {
+          id: 2,
+          question: 'Quelle boucle utilise-t-on pour itérer sur une séquence ?',
+          options: ['while', 'for', 'loop', 'iterate'],
+          correct: 1,
+          explanation: 'La boucle "for" est utilisée pour itérer sur des séquences comme les listes.'
+        },
+        {
+          id: 3,
+          question: 'Comment définit-on une condition en Python ?',
+          options: ['condition:', 'if:', 'when:', 'check:'],
+          correct: 1,
+          explanation: 'En Python, on utilise "if:" pour définir une condition.'
+        }
+      ]
+    },
+    // Java quizzes
+    'java-1': {
+      title: 'Quiz : Introduction au langage Java',
+      questions: [
+        {
+          id: 1,
+          question: 'Quel est le principe "Write once, run anywhere" de Java ?',
+          options: [
+            'Code Java peut s\'exécuter sur toute machine',
+            'JVM permet l\'exécution sur différentes plateformes',
+            'Java est un langage interprété',
+            'Java compile directement en code machine'
+          ],
+          correct: 1,
+          explanation: 'La JVM (Java Virtual Machine) permet d\'exécuter le bytecode Java sur différentes plateformes.'
+        },
+        {
+          id: 2,
+          question: 'Quel IDE est mentionné pour développer en Java ?',
+          options: ['Visual Studio', 'Eclipse', 'Notepad++', 'Sublime Text'],
+          correct: 1,
+          explanation: 'Eclipse est un IDE populaire et gratuit pour le développement Java.'
+        }
+      ]
+    },
+    // Merge additional quiz data
+    ...additionalQuizData
   },
   mindmap: {
     'database-1': {
@@ -511,6 +747,95 @@ export const mockAIData = {
           ]
         }
       ]
-    }
+    },
+    // Python mindmaps
+    'python-1': {
+      title: 'Introduction à Python, installation, types, variables, boucles',
+      nodes: [
+        {
+          title: 'Installation et Environnement',
+          children: [
+            {
+              title: 'Anaconda',
+              children: [
+                { title: 'Distribution Python complète' },
+                { title: 'Packages scientifiques intégrés' },
+                { title: 'Gestion d\'environnements virtuels' }
+              ]
+            },
+            {
+              title: 'IDE et Outils',
+              children: [
+                { title: 'VS Code avec extensions Python' },
+                { title: 'Jupyter Notebook pour prototypage' },
+                { title: 'PyCharm pour développement avancé' }
+              ]
+            }
+          ]
+        },
+        {
+          title: 'Types de Données',
+          children: [
+            {
+              title: 'Types Primitifs',
+              children: [
+                { title: 'int : nombres entiers' },
+                { title: 'float : nombres décimaux' },
+                { title: 'str : chaînes de caractères' },
+                { title: 'bool : valeurs booléennes' }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    // Java mindmaps
+    'java-1': {
+      title: 'Introduction au langage Java, syntaxe, variables, conditions, boucles, IDE',
+      nodes: [
+        {
+          title: 'Caractéristiques de Java',
+          children: [
+            {
+              title: 'Orienté Objet',
+              children: [
+                { title: 'Tout est objet (sauf primitifs)' },
+                { title: 'Encapsulation, Héritage, Polymorphisme' }
+              ]
+            },
+            {
+              title: 'Portable',
+              children: [
+                { title: 'Write once, run anywhere' },
+                { title: 'JVM (Java Virtual Machine)' },
+                { title: 'Bytecode intermédiaire' }
+              ]
+            }
+          ]
+        },
+        {
+          title: 'Environnement de Développement',
+          children: [
+            {
+              title: 'JDK (Java Development Kit)',
+              children: [
+                { title: 'Compilateur javac' },
+                { title: 'Machine virtuelle java' },
+                { title: 'Outils de développement' }
+              ]
+            },
+            {
+              title: 'IDE',
+              children: [
+                { title: 'Eclipse : gratuit, extensible' },
+                { title: 'IntelliJ IDEA : moderne, intelligent' }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    // Merge additional mindmap data
+    ...additionalMindmapData
   }
 };
