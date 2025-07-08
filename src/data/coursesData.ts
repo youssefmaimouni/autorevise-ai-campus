@@ -407,8 +407,23 @@ export const mockAIData = {
       title: 'Séance 1 : Concepts de base et SQL, Modèle relationnel, introduction à SQL',
       content: `# Concepts Fondamentaux des Bases de Données
 
-      python
+## Problématiques des Systèmes de Fichiers Classiques
+- Multiples applications, formats, langages
+- Redondance de données et de code
+- Pas de facilité d'interrogation
+- Difficultés de gestion et incohérence des données
 
+## L'approche 'Base de Données'
+- Modélisation des données
+- Élimination de la redondance
+- Centralisation et organisation
+- Utilisation d'un SGBD (Système de Gestion de Bases de Données)
+- Langage déclaratif (SQL) pour interagir avec les données
+
+## Architecture ANSI-SPARC
+1. Niveau Interne (physique) : Stockage physique
+2. Niveau Conceptuel : Modèle logique
+3. Niveau Externe : Vues utilisateurs`
     },
     // Python sessions
     'python-1': {
