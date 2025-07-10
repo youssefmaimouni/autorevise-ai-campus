@@ -33,7 +33,7 @@ export const coursesData: Course[] = [
     sessions: [
       {
         id: 'python-1',
-        title: 'Introductio à Python',
+        title: 'Introduction à Python',
         description: 'Présentation de Python et installation de l\'environnement (Anaconda, VS Code, Jupyter Notebook), Variables et types de données, Opérateurs arithmétiques, logiques et de comparaison, Structures de contrôle : conditions (if-else) et boucles (for, while)',
         duration: '2h',
         completed: false
